@@ -47,13 +47,13 @@ export default function SideBar() {
       <div className={`side-bar ${sidebarOpen ? "open" : "closed"}`}>
         <h2>Menu</h2>
         <nav>
-          <Link to="/" style={linkStyle}>
+          {/* <Link to="/" style={linkStyle}>
             Accueil
-          </Link>
-          <Link to="/candidats" style={linkStyle}>
+          </Link> */}
+          <Link to="/" style={linkStyle}>
             Liste des candidats
           </Link>
-          <Link to="/candidats/create" style={linkStyle}>
+          <Link to="/candidats/" style={linkStyle}>
             Créer un candidat
           </Link>
           <Link to="/parametres" style={linkStyle}>
