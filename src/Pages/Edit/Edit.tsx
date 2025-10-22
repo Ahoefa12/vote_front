@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import Input from "../../components/Input/Input";
 import { candidatApi } from "../../api/candidats/crud.";
+import Loader from "../../components/Loader/Loader";
 
 
 export default function Edit() {
