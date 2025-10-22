@@ -59,8 +59,6 @@ export default function SideBar() {
           <Link to="/parametres" style={linkStyle}>
             Paramètres
           </Link>
-
-          <Button label="creer"/>
         </nav>
       </div>
     </>
