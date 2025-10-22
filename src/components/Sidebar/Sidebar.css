@@ -1,0 +1,45 @@
+.side-bar {
+  width: 250px;
+  height: 100vh;
+  background-color: #15171c;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Quand la sidebar est fermée */
+.side-bar.closed {
+  transform: translateX(-100%);
+}
+
+/* Quand elle est ouverte */
+.side-bar.open {
+  transform: translateX(0);
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: #15171c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.toggle-btn:hover {
+  background-color: #333;
+}
+
+
+.size-icon{
+    color: white;
+    background-color: white;
+}
