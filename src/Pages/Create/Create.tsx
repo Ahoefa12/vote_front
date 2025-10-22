@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import Input from '../../components/Input/Input'
 import SideBar from '../../components/Sidebar/SideBar'
 import Button from '../../components/Button/Button'
-import { candidatApi } from '../../api/candidats/crud'
+
 import { Link } from 'react-router'
+import { candidatApi } from '../../api/candidats/crud'
 
 export default function Create() {
     const [lastName, setLastName] = useState("")
@@ -36,10 +37,10 @@ export default function Create() {
     const onFullHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setHeight(event.target.value)
     }
-    const onFullShortDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const onFullShortDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setShortDescription(event.target.value)
     }
-    const onFullFullDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const onFullFullDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setFullDescription(event.target.value)
     }
     const onFullProfilePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -94,16 +95,16 @@ export default function Create() {
                     {
                         successMessage
                     }
-                    <Input label='LastName :' reference='lastName' type='texti' placeholder='Entrez le nom du candidat' onChange={onFullLastNameChange} value={lastName} />
+                    <Input label='LastName :' reference='lastName' type='text' placeholder='Entrez le nom du candidat' onChange={onFullLastNameChange} value={lastName} />
                     <Input label='FirstName :' reference='firstName' type='text' placeholder='Entrez le prénom du candidat' onChange={onFullFirstNameChange} value={firstName} />
                     <Input label='Nationality :' reference='nationality' type='text' placeholder='Précisez la natinalité du candidat' onChange={onFullNationalityChange} value={nationality} />
-                    <Input label='Âge :' reference='age' type='number' placeholder="Veuillez renseigner l'âge du candidat" onChange={onFullAgeChange} value={age} />
-                    <Input label='Weight :' reference='weight' type='number' placeholder='Veuillez renseigner le poids du candidat' onChange={onFullWeightChange} value={weight} />
+                    <Input label='Age (kg):' reference='age' type='number' placeholder="Veuillez renseigner l'âge du candidat" onChange={onFullAgeChange} value={age} />
+                    <Input label='Weight (cm):' reference='weight' type='number' placeholder='Veuillez renseigner le poids du candidat' onChange={onFullWeightChange} value={weight} />
                     <Input label='Height :' reference='height' type='number' placeholder='Veuillez renseigner la taille du candidat' onChange={onFullHeightChange} value={height} />
-                    <Input label='ShortDescription :' reference='shortDescription' type='text' placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
-                    <Input label='FullDescription :' reference='fullDescription' type='text' placeholder='Donnez une description complète candidat' onChange={onFullFullDescriptionChange} value={fullDescription} />
-                    <Input label='ProfilePhoto :' reference='profilePhoto' type='file' placeholder='Veuillez charger une photo' onChange={onFullProfilePhotoChange} value={profilePhoto} />
-                    <Button label='Créer'  type='submit' />
+                    <textarea name='ShortDescription :'  placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
+                    <textarea name='FullDescription :' placeholder='Donnez une description complète du candidat' onChange={onFullFullDescriptionChange} value={fullDescription} />
+                    <Input label='ProfilePhoto (URL):' reference='profilePhoto' type='file' placeholder='Veuillez charger une photo' onChange={onFullProfilePhotoChange} value={profilePhoto} />
+                    <Button label='Créer' type='submit' />
                     <Link to="/" className="back-button">← Retour à l'accueil</Link>
 
 

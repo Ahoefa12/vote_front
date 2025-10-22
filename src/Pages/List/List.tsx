@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import "./List.css";
-import { candidatApi } from "../../api/candidats/crud";
+
 import type { Candidat } from "../../data/models/canditat";
 import Loader from "../../components/Loader/Loader";
 import SideBar from "../../components/Sidebar/SideBar";
+import { candidatApi } from "../../api/candidats/crud";
 export default function List() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [candidats, setCandidats] = useState<Array<Candidat>>([]);

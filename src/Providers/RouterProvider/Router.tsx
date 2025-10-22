@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 // import SideBar from "../../components/Sidebar/SideBar";
 import Create from "../../Pages/Create/Create";
 import List from "../../Pages/List/List";
+import Edit from "../../Pages/Edit/Edit";
 
 const router = createBrowserRouter([
     
@@ -23,10 +24,10 @@ const router = createBrowserRouter([
       //   element: <ProjectCreate />,
       // },
 
-      // {
-      //   path: ":id/edit",
-      //   element: <ProjectEdit />,
-      // },
+      {
+        path: ":id/edit",
+        element: <Edit />,
+      },
       
       // {
       //   path: ":id/show",
