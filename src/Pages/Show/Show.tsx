@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { candidatApi } from '../../api/candidats/crud';
+import Loader from '../../components/Loader/Loader';
 
 export default function Show() {
   const navigate = useNavigate();
