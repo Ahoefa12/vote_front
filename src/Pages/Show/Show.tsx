@@ -34,9 +34,9 @@ export default function Show() {
             const data = await candidatApi.read(parseInt(params.id || "0", 10));
             setFirstName(data.firstName);
             setLastName(data.lastName);
-            setAge(data.age.toLocaleString);
-            setHeight(data.height.toLocaleString);
-            setWeight(data.weight.toLocaleString);
+            // setAge(data.age.toLocaleString);
+            // setHeight(data.height.toLocaleString);
+            // setWeight(data.weight.toLocaleString);
             setNationality(data.nationality);
             setShortDescription(data.shortDescription);
             setFullDescription(data.fullDescription);
@@ -56,9 +56,9 @@ export default function Show() {
       <button type="button" onClick={goToBack}>
         Retour
       </button>
-      <h1>Détail d'un projet</h1>
+      <h1>Détail d'un candidat</h1>
 
-      <div>
+      <div className='Container'>
          {
           isLoading ? <Loader/> : ''
          }
@@ -94,7 +94,7 @@ export default function Show() {
 
        <br />
 
-        <i> {status} </i>
+        
       </div>
     </div>
   );

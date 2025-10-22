@@ -1,7 +1,7 @@
 import React from "react";
 import "./Button.css"; 
 
-interface ButtonProps {
+type ButtonProps = {
   label: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";

@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 // import SideBar from "../../components/Sidebar/SideBar";
 import Create from "../../Pages/Create/Create";
 import List from "../../Pages/List/List";
+import Edit from "../../Pages/Edit/Edit";
+import Show from "../../Pages/Show/Show";
 
 const router = createBrowserRouter([
     
@@ -23,15 +25,15 @@ const router = createBrowserRouter([
       //   element: <ProjectCreate />,
       // },
 
-      // {
-      //   path: ":id/edit",
-      //   element: <ProjectEdit />,
-      // },
+      {
+        path: ":id/edit",
+        element: <Edit />,
+      },
       
-      // {
-      //   path: ":id/show",
-      //   element: <ProjectShow />,
-      // },
+      {
+        path: ":id/show",
+        element: <Show />,
+      },
     ],
   },
 ]);

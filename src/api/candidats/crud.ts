@@ -6,7 +6,7 @@ import axiosInstance from "../axios_instance";
 export const candidatApi = {
     getAll: async (): Promise<Candidat[]> => {
         const response = await axiosInstance.get('/candidats');
-        return response.data;
+        return response.data.data;
     },
 
     create: async (formData: FormData): Promise<Candidat[]> => {
