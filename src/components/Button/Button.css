@@ -1,0 +1,17 @@
+.btn{
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.btn-active{
+    background-color: blue;
+    color: white;
+}
+
+.btn-disabled{
+    background-color: #cccccc;
+    color: #666;
+}
