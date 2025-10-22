@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { useState } from "react";
 import "./Sidebar.css";
-import Button from "../Button/Button";
 
 export default function SideBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
