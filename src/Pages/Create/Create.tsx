@@ -1,0 +1,70 @@
+import React, { useState } from 'react'
+import Input from '../../components/Input/Input'
+import SideBar from '../../components/Sidebar/SideBar'
+import Button from '../../components/Button/Button'
+
+export default function Create() {
+    const [lastName, setLastName] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [nationality, setNationality] = useState("")
+    const [age, setAge] = useState("")
+    const [weight, setWeight] = useState("")
+    const [height, setHeight] = useState("")
+    const [shortDescription, setShortDescription] = useState("")
+    const [fullDescription, setFullDescription] = useState("")
+    const [profilePhoto, setProfilePhoto] = useState("")
+
+    const onFullLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setLastName(event.target.value)
+    }
+    const onFullFirstNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFirstName(event.target.value)
+    }
+    const onFullNationalityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setNationality(event.target.value)
+    }
+    const onFullAgeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAge(event.target.value)
+    }
+    const onFullWeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setWeight(event.target.value)
+    }
+    const onFullHeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setHeight(event.target.value)
+    }
+    const onFullShortDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setShortDescription(event.target.value)
+    }
+    const onFullFullDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFullDescription(event.target.value)
+    }
+    const onFullProfilePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setProfilePhoto(event.target.value)
+    }
+
+
+
+    return (
+        <div className='create'>
+            <SideBar/>
+            <h1>
+                Créer un candidat
+            </h1>
+            <div className='Container'>
+                <form >
+                    <Input label='LastName :' reference='lastName' type='texti' placeholder='Entrez le nom du candidat' onChange={onFullLastNameChange} value={lastName} />
+                    <Input label='FirstName :' reference='firstName' type='text' placeholder='Entrez le prénom du candidat' onChange={onFullFirstNameChange} value={firstName} />
+                    <Input label='Nationality :' reference='nationality' type='text' placeholder='Précisez la natinalité du candidat' onChange={onFullNationalityChange} value={nationality} />
+                    <Input label='Âge :' reference='age' type='number' placeholder="Veuillez renseigner l'âge du candidat" onChange={onFullAgeChange} value={age} />
+                    <Input label='Weight :' reference='weight' type='number' placeholder='Veuillez renseigner le poids du candidat' onChange={onFullWeightChange} value={weight} />
+                    <Input label='Height :' reference='height' type='number' placeholder='Veuillez renseigner la taille du candidat' onChange={onFullHeightChange} value={height} />
+                    <Input label='ShortDescription :' reference='shortDescription' type='text' placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
+                    <Input label='FullDescription :' reference='fullDescription' type='text' placeholder='Donnez une description complète candidat' onChange={onFullFullDescriptionChange} value={fullDescription} />
+                    <Input label='ProfilePhoto :' reference='profilePhoto' type='file' placeholder='Veuillez charger une photo' onChange={onFullProfilePhotoChange} value={profilePhoto} />
+                    <Button label='Créer'  type='submit'/>
+
+                </form>
+            </div>
+        </div>
+    )
+}
