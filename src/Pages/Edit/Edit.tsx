@@ -105,6 +105,7 @@ export default function Edit() {
 
       {successMessage && <p>{successMessage}</p>}
 
+        <Link to="/" className="back-button">← Retour à l'accueil</Link>
         <div className="Container">
 
         <form onSubmit={handleSubmit}>
@@ -119,7 +120,6 @@ export default function Edit() {
             <Input label="ProfilePhoto (URL):" reference="profilePhoto" type="file" placeholder="Veuillez charger une photo" onChange={OnProfilePhotoChange} value={profilePhoto} />
 
             <Button label='Mettre à jour' type='submit' />
-            <Link to="/" className="back-button">← Retour à l'accueil</Link>
         </form>
         </div>
     </div>
