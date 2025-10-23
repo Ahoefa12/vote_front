@@ -71,7 +71,10 @@ export default function Edit() {
       if (profilePhoto) {
         formData.append("profilePhoto", profilePhoto);
       }
-      await candidatApi.update(parseInt(params.id || "0", 10), formData);
+      await candidatApi.update(
+        parseInt(params.id || "0", 10),
+        formData
+      );
 
       setSuccessMessage("Candidat mis à jour avec succès !");
     } catch (error) {
