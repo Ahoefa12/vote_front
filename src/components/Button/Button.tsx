@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.css"; 
 
 type ButtonProps = {
-  label: string;
+  label?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
