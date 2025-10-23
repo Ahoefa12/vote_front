@@ -33,9 +33,8 @@ export default function Show() {
       <SideBar />
       <h1>Détails du candidat</h1>
 
-      <Link to="/" className="back-button">
-        ← Retour à l'accueil
-      </Link>
+      <Link to="/candidats/List" className="back-button">← Retour à l'accueil</Link>
+      
       <div className="Container">
         {isLoading ? (
           <Loader />

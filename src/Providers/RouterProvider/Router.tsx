@@ -4,12 +4,13 @@ import Create from "../../Pages/Create/Create";
 import List from "../../Pages/List/List";
 import Edit from "../../Pages/Edit/Edit";
 import Show from "../../Pages/Show/Show";
+import Accueil from "../../components/Accueil/Accueil";
 
 const router = createBrowserRouter([
     
   {
     path: "/",
-    element: <List/>,
+    element: <Accueil/>,
   },
  
 
@@ -20,10 +21,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Create />,
       },
-      // {
-      //   path: "create",
-      //   element: <ProjectCreate />,
-      // },
+      {
+        path: "List",
+        element: <List />,
+      },
 
       {
         path: ":id/edit",

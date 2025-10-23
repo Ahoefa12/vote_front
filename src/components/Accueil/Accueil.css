@@ -1,0 +1,15 @@
+.accueil-container {
+  min-height: 170vh;
+  background-image: url('/public/bg2.jpeg'); /* chemin vers ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+.image-accueil {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

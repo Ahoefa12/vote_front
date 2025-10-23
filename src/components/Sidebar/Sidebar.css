@@ -1,3 +1,4 @@
+/* Sidebar */
 .side-bar {
   width: 250px;
   height: 100vh;
@@ -9,18 +10,20 @@
   left: 0;
   overflow-y: auto;
   transition: transform 0.3s ease;
+  z-index: 900; /* derrière le bouton toggle */
 }
 
-/* Quand la sidebar est fermée */
+/* Sidebar fermée */
 .side-bar.closed {
   transform: translateX(-100%);
 }
 
-/* Quand elle est ouverte */
+/* Sidebar ouverte */
 .side-bar.open {
   transform: translateX(0);
 }
 
+/* Bouton toggle */
 .toggle-btn {
   position: fixed;
   top: 1rem;
@@ -30,16 +33,55 @@
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1001; /* au-dessus de la sidebar */
   border-radius: 5px;
+  transition: left 0.3s ease;
 }
 
+/* Décalage du bouton quand la sidebar est ouverte */
+.toggle-btn.shifted {
+  left: 260px; /* légèrement à droite de la sidebar */
+}
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  stroke: white;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.close-btn:hover {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.close-btn svg {
+  stroke: white;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Hover */
 .toggle-btn:hover {
   background-color: #333;
 }
 
+/* Icône SVG */
+.size-icon {
+  stroke: white;
+  width: 24px;
+  height: 24px;
+  fill: none; /* utile si tu utilises des icônes outline */
+}
 
-.size-icon{
-    color: white;
-    background-color: white;
+/* Sécurité : forcer le stroke blanc sur tous les SVG du bouton */
+.toggle-btn svg {
+  stroke: white;
+  width: 24px;
+  height: 24px;
 }

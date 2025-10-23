@@ -118,7 +118,7 @@ export default function Edit() {
 
       {successMessage && <p>{successMessage}</p>}
 
-      <Link to="/" className="back-button">
+      <Link to="/candidats/List" className="back-button">
         ← Retour à l'accueil
       </Link>
       <div className="Container">

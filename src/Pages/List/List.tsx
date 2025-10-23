@@ -54,7 +54,7 @@ export default function List() {
       <SideBar />
       <h1>Liste des Candidats</h1>
       {successmessage}
-      <Link to={"/candidats"}>Créer un candidat</Link>
+      <Link className="back-butto" to={"/candidats"}>Créer un candidat</Link>
 
       <br />
       <br />
