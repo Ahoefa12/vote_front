@@ -44,7 +44,7 @@ export default function SideBar() {
 
       {/* Sidebar avec classe dynamique */}
       <div className={`side-bar ${sidebarOpen ? "open" : "closed"}`}>
-        <h2>Menu</h2>
+        
         <nav>
           {/* <Link to="/" style={linkStyle}>
             Accueil

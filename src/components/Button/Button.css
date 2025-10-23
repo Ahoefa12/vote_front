@@ -1,27 +1,50 @@
-.btn{
-    width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 15px;
+/* Cellule du tableau contenant les boutons */
+td.btn-cell {
+  width: 120px; /* largeur fixe et proportionnée */
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
 }
 
-.btn-active{
-    background-color: rgb(12, 47, 75);
-    width: 100%;
-    padding: 14px;
-    margin-top: 18px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: white;
+/* Conteneur des boutons */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
-.btn-disabled{
-    background-color: #cccccc;
-    color: #666;
+/* Boutons icône seuls */
+.btn-icon {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Icônes */
+.size-icon {
+  width: 14px;
+  height: 14px;
+  stroke: #333;
+}
+
+/* Couleurs au survol */
+.btn-delete:hover {
+  background-color: #f8d7da;
+}
+.btn-edit:hover {
+  background-color: #d1ecf1;
+}
+.btn-details:hover {
+  background-color: #d4edda;
 }

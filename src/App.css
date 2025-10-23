@@ -5,7 +5,6 @@ h1 {
   text-transform: capitalize;
   letter-spacing: 1px;
   text-align: center;
-
 }
 .Container {
   background-color: #ffffff;
@@ -34,7 +33,7 @@ input:focus {
   box-shadow: 0 0 6px rgb(11, 39, 63);
 }
 textarea {
-  width: 100%;
+  width: 94%;
   padding: 14px;
   margin: 12px 0;
   border: 1px solid #dcdde1;
@@ -61,14 +60,27 @@ label {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background: linear-gradient(120deg, #f6f9fc, #e0f7fa); */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2d3436;
-  display: flex;
-  justify-content: center;
+  /* background: #f6f9fc;//optionnel pour un fond clair */
+  min-height: 100vh;
+  display: block; /* on enlève le flex */
   align-items: center;
-  height: 150vh;
-  
+}
+
+.but{
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  background-color: rgb(12, 47, 75);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
 }
 
 .profile-photo {

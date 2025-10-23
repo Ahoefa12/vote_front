@@ -118,7 +118,7 @@ export default function Create() {
                         placeholder='Veuillez charger une photo'
                         onChange={onFullProfilePhotoChange}
                     />
-                    <Button label='Créer' type='submit' />
+                    <Button className='but' label='Créer' type='submit' />
 
 
                 </form>

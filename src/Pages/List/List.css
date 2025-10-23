@@ -1,20 +1,17 @@
+/* ✅ TABLEAU GLOBAL */
 table {
-    
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* Force des colonnes de taille égale */
   font-size: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px 0;
 }
 
-th, td {
-
+th,
+td {
   padding: 10px 12px;
   border: 1px solid #ccc;
-  text-align: left; /* Justification uniforme */
-  word-wrap: break-word; /* Évite que le texte ne déborde */
-
+  text-align: left;
+  word-wrap: break-word;
 }
 
 thead {
@@ -24,4 +21,38 @@ thead {
 
 tbody tr:nth-child(even) {
   background-color: #fafafa;
+}
+
+@media screen and (max-width: 1024px) {
+  td:nth-child(1),
+  th:nth-child(1), /* LastName */
+  td:nth-child(5),
+  th:nth-child(5)  /* ShortDescription */ {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  td:nth-child(1),
+  th:nth-child(1), /* LastName */
+  td:nth-child(3),
+  th:nth-child(3), /* Nationality */
+  td:nth-child(5),
+  th:nth-child(5)  /* ShortDescription */ {
+    display: none;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .btn-cell {
+    display: flex;
+    gap: 5px;
+  }
+
+  .btn svg {
+    width: 20px;
+    height: 20px;
+  }
 }
