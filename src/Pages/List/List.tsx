@@ -93,7 +93,12 @@ export default function List() {
                                     <td>{candidat.height}</td>
                                     <td>{candidat.shortDescription}</td>
                                     <td>{candidat.fullDescription}</td>
-                                    <td>{candidat.profilePhoto}</td>
+                                    <td><img
+                                        src={candidat.profilePhoto}
+                                        alt={`${candidat.firstName} ${candidat.lastName}`}
+                                        className="profile-photo"
+                                    />
+                                    </td>
 
                                     <td className="btn-container">
                                         <button

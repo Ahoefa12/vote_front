@@ -17,7 +17,8 @@ export default function Create() {
     const [height, setHeight] = useState("")
     const [shortDescription, setShortDescription] = useState("")
     const [fullDescription, setFullDescription] = useState("")
-    const [profilePhoto, setProfilePhoto] = useState("")
+    const [profilePhoto, setProfilePhoto] = useState<File | null>(null)
+
 
     const onFullLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLastName(event.target.value)
@@ -44,8 +45,11 @@ export default function Create() {
         setFullDescription(event.target.value)
     }
     const onFullProfilePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setProfilePhoto(event.target.value)
+        if (event.target.files && event.target.files[0]) {
+            setProfilePhoto(event.target.files[0])
+        }
     }
+
 
 
 
@@ -63,7 +67,10 @@ export default function Create() {
             formData.set("height", height);
             formData.set("shortDescription", shortDescription);
             formData.set("fullDescription", fullDescription);
-            formData.set("profilePhoto", profilePhoto);
+            if (profilePhoto) {
+                formData.append("profilePhoto", profilePhoto)
+            }
+
             await candidatApi.create(formData);
             setSuccessMessage('Candidat crée avec succès')
             setLastName('')
@@ -74,7 +81,6 @@ export default function Create() {
             setHeight('')
             setShortDescription('')
             setFullDescription('')
-            setProfilePhoto('')
 
         } catch (error) {
 
@@ -90,6 +96,7 @@ export default function Create() {
             <h1>
                 Créer un candidat
             </h1>
+            <Link to="/" className="back-button">← Retour à l'accueil</Link>
             <div className='Container'>
                 <form onSubmit={handleSubmit}>
                     {
@@ -101,11 +108,16 @@ export default function Create() {
                     <Input label='Age (kg):' reference='age' type='number' placeholder="Veuillez renseigner l'âge du candidat" onChange={onFullAgeChange} value={age} />
                     <Input label='Weight (cm):' reference='weight' type='number' placeholder='Veuillez renseigner le poids du candidat' onChange={onFullWeightChange} value={weight} />
                     <Input label='Height :' reference='height' type='number' placeholder='Veuillez renseigner la taille du candidat' onChange={onFullHeightChange} value={height} />
-                    <textarea name='ShortDescription :'  placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
+                    <textarea name='ShortDescription :' placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
                     <textarea name='FullDescription :' placeholder='Donnez une description complète du candidat' onChange={onFullFullDescriptionChange} value={fullDescription} />
-                    <Input label='ProfilePhoto (URL):' reference='profilePhoto' type='file' placeholder='Veuillez charger une photo' onChange={onFullProfilePhotoChange} value={profilePhoto} />
+                    <Input
+                        label='ProfilePhoto (URL):'
+                        reference='profilePhoto'
+                        type='file'
+                        placeholder='Veuillez charger une photo'
+                        onChange={onFullProfilePhotoChange}
+                    />
                     <Button label='Créer' type='submit' />
-                    <Link to="/" className="back-button">← Retour à l'accueil</Link>
 
 
                 </form>
