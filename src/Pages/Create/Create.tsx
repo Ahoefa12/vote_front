@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import Input from '../../components/Input/Input'
 import SideBar from '../../components/Sidebar/SideBar'
 import Button from '../../components/Button/Button'
+import { candidatApi } from '../../api/candidats/crud'
+import { Link } from 'react-router'
 
 export default function Create() {
     const [lastName, setLastName] = useState("")
     const [firstName, setFirstName] = useState("")
     const [nationality, setNationality] = useState("")
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [successMessage, setSuccessMessage] = useState<string>('')
     const [age, setAge] = useState("")
     const [weight, setWeight] = useState("")
     const [height, setHeight] = useState("")
@@ -44,14 +48,52 @@ export default function Create() {
 
 
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            setIsLoading(true)
+            setSuccessMessage('')
+            const formData = new FormData();
+            formData.set("lastName", lastName);
+            formData.set("firstName", firstName);
+            formData.set("nationality", nationality);
+            formData.set("age", age);
+            formData.set("weight", weight);
+            formData.set("height", height);
+            formData.set("shortDescription", shortDescription);
+            formData.set("fullDescription", fullDescription);
+            formData.set("profilePhoto", profilePhoto);
+            await candidatApi.create(formData);
+            setSuccessMessage('Candidat crée avec succès')
+            setLastName('')
+            setFirstName('')
+            setNationality('')
+            setAge('')
+            setWeight('')
+            setHeight('')
+            setShortDescription('')
+            setFullDescription('')
+            setProfilePhoto('')
+
+        } catch (error) {
+
+        }
+        finally {
+            setIsLoading(false)
+        }
+    };
+
     return (
         <div className='create'>
-            <SideBar/>
+            <SideBar />
             <h1>
                 Créer un candidat
             </h1>
             <div className='Container'>
-                <form >
+                <form onSubmit={handleSubmit}>
+                    {
+                        successMessage
+                    }
                     <Input label='LastName :' reference='lastName' type='texti' placeholder='Entrez le nom du candidat' onChange={onFullLastNameChange} value={lastName} />
                     <Input label='FirstName :' reference='firstName' type='text' placeholder='Entrez le prénom du candidat' onChange={onFullFirstNameChange} value={firstName} />
                     <Input label='Nationality :' reference='nationality' type='text' placeholder='Précisez la natinalité du candidat' onChange={onFullNationalityChange} value={nationality} />
@@ -61,7 +103,9 @@ export default function Create() {
                     <Input label='ShortDescription :' reference='shortDescription' type='text' placeholder='Donnez une briève description du candidat' onChange={onFullShortDescriptionChange} value={shortDescription} />
                     <Input label='FullDescription :' reference='fullDescription' type='text' placeholder='Donnez une description complète candidat' onChange={onFullFullDescriptionChange} value={fullDescription} />
                     <Input label='ProfilePhoto :' reference='profilePhoto' type='file' placeholder='Veuillez charger une photo' onChange={onFullProfilePhotoChange} value={profilePhoto} />
-                    <Button label='Créer'  type='submit'/>
+                    <Button label='Créer'  type='submit' />
+                    <Link to="/" className="back-button">← Retour à l'accueil</Link>
+
 
                 </form>
             </div>

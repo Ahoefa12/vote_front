@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
-
 import Input from "../../components/Input/Input";
 import { candidatApi } from "../../api/candidats/crud.";
 import Loader from "../../components/Loader/Loader";
@@ -69,7 +68,7 @@ export default function Edit() {
     }
   };
 
-  // 🔍 Charger le candidat au montage du composant
+  
   useEffect(() => {
     const fetchCandidat = async () => {
       if (params.id) {
